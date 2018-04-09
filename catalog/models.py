@@ -85,6 +85,7 @@ class BookInstance(models.Model):
             return True
         return False
 
+
 class Author(models.Model):
     """
     Model representing an author.
@@ -95,8 +96,8 @@ class Author(models.Model):
     date_of_death = models.DateField('Died', null=True, blank=True)
 
     class Meta:
-        ordering = ["last_name","first_name"]
-    
+        ordering = ["last_name", "first_name"]
+
     def get_absolute_url(self):
         """
         Returns the url to access a particular author instance.
@@ -104,7 +105,10 @@ class Author(models.Model):
         return reverse('author-detail', args=[str(self.id)])
 
     def __str__(self):
-        return '%s, %s' % (self.last_name, self.first_name)
+        """
+        String for representing the Model object.
+        """
+        return '{0}, {1}'.format(self.last_name, self.first_name)
 
 
 

@@ -21,7 +21,7 @@ def index(request):
 
     time = datetime.datetime.now()
     w_day = time.weekday()
-    w_day = w_day - 6
+    w_day = w_day
     day = time.day
     month = time.month
     year = time.year

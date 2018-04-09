@@ -8,10 +8,10 @@
     {% for bookinst in bookinstance_list %}
         {{  forloop.counter0 }}
         <li class={% if forloop.counter0  ==  0 %}"btn-primary"
-            class={% elif i  ==  1 %}"btn-success"
-            class={% elif i  ==  2 %}"btn-danger"
-            class={% elif i  ==  3 %}"btn-info"
-            class={% elif i  ==  4 %}"btn-warning"{% endif %}
+            class={% elif forloop.counter0  ==  1 %}"btn-success"
+            class={% elif forloop.counter0  ==  2 %}"btn-danger"
+            class={% elif forloop.counter0  ==  3 %}"btn-info"
+            class={% elif forloop.counter0  ==  4 %}"btn-warning"{% endif %}
             class="{% if bookinst.is_overdue %}{% endif %}i">
             <a href="{% url 'book-detail' bookinst.book.pk %}">{{bookinst.book.title}}</a> ({{ bookinst.due_back }}) {% if user.is_staff %}-{{ bookinst.borrower }}{% endif %}
     </li>
